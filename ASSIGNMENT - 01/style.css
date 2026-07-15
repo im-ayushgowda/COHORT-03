@@ -911,11 +911,12 @@ footer{
     .footer-container{
         flex-direction: column; /* was row with wrap — now a single stacked column */
         align-items: center;
+        justify-content: space-evenly;
         padding: 32px 20px;
         gap: 28px;
     }
     .footer-logo h2{
-        font-size: 28px;
+        font-size: 20px;
     }
     .footer-links,
     .footer-contact{
@@ -960,7 +961,7 @@ footer{
     }
     .footer-links h3,
     .footer-contact h3{
-        font-size: 20px; /* was fixed 24px */
+        font-size: 24px; /* was fixed 24px */
     }
 }
 
