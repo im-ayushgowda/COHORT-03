@@ -1,0 +1,994 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url('fonts/Lexend-Regular.woff2') format('woff2'),
+            url('fonts/Lexend-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Lexend', sans-serif;
+}
+main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 254, 252);
+    padding: 0 30px;
+}
+#section1{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+nav{
+    width: 100%;
+    min-height: 50px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+nav .header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;  
+}
+nav .links{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    flex: 1;
+    justify-content: center;
+}
+.links a:hover{
+    color: blue;
+}
+.links a{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(37, 99, 235);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.links a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(16, 92, 255);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.links a:hover::after{
+    transform: scaleX(1);
+}
+.header i{
+    font-size: 30px
+}
+.links a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+.btn{
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+    cursor: pointer;
+
+}
+.btn button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 20px;
+}
+.btn button:nth-child(2){
+    background-color: black;
+    color: white;
+}
+.btn button:nth-child(1){
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
+
+.hero-div{
+    width: 100%;
+    height: calc(100% - 51px);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.hero-div .left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    background-color: rgb(246, 244, 244);
+}
+
+.left .rating{
+    padding: 10px 30px;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    border-radius: 50px;
+    gap: 10px;
+    align-items: center;
+}
+.rating i{
+    font-size: 25px;
+}
+.left .logo img{
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+.hero-div .right{
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.hero-div .right img{
+    width: 100%;
+    
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+.left h1{
+    padding-top: 40px;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 1;
+}
+.left p{
+    padding-top: 30px;
+    font-size: 20px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+.left .btn{
+    padding-top: 30px;
+
+}
+.left .btn button{
+    padding: 20px 30px;
+    font-size: 18px;
+    font-weight: 700;
+}
+h4{
+    padding-top: 30px;
+    font-size: 30px;
+    color: rgba(147, 143, 143, 0.537);
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    padding: 15px;
+    gap: 20px;
+
+}
+
+#section2{
+    width: 100%;
+    height: 60%;
+    padding: 30px 30px;
+}
+.second-section{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    gap: 20px;
+}
+.card1{
+    width: 25%;
+    height: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(246, 244, 244);
+    overflow: hidden;
+}
+.card1 .card-img1{
+    width: 100%;
+    height: 85%;
+    border-radius: 20px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cm9vbSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D);
+}
+.card-img1-text{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px;
+}
+.card-img1-text h4{
+    padding-top: 0;
+    font-size: 18px;
+    color: black;
+}
+.card-img1-text p{
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(116, 113, 113);
+}
+.card2{
+    width: 25%;
+    height: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(246, 244, 244);
+    overflow: hidden;
+}
+.card2 .card-img1{
+    width: 100%;
+    height: 85%;
+    border-radius: 20px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://images.unsplash.com/photo-1621891333819-00c206ec8994?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJvb20lMjBwaWN8ZW58MHx8MHx8fDA%3D);
+}
+.card3{
+    width: 25%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(246, 244, 244);
+    overflow: hidden;
+}
+.card3 .card-img1{
+    width: 100%;
+    height: 85%;
+    border-radius: 20px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cm9vbSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D);
+}
+.card-img3-text{
+    font-size: 13px;
+    display: flex;
+    align-items: ;
+    flex-direction: column;
+    padding: 15px 15px;
+}
+.card-img3-text h2{
+    padding-top: 0;
+    font-size: 25px;
+    font-weight: 300;
+    color: black;
+}
+.card-img3-text p{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: rgb(116, 113, 113);
+}
+.Explore{
+    background-color: rgb(255, 255, 255);
+    height: fit-content;
+    width: fit-content;
+    border-radius: 30px;
+}
+.card3 .Explore{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.card4{
+    width: 25%;
+    height: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(246, 244, 244);
+    overflow: hidden;
+}
+.card4 .card-img1{
+    width: 100%;
+    height: 85%;
+    border-radius: 20px;
+    background-position: 30% 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://images.unsplash.com/photo-1647792855184-af42f1720b91?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+.Explore:hover{
+    background-color: black;
+    color: white;
+    transition: all .5s;
+}
+
+.btn button:nth-child(1):hover{
+        background-color: black;
+        color: white;
+        transition: all .5s;
+}
+.btn button:nth-child(2):hover{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        transition: all .5s;
+}
+
+
+
+#section3{
+    width: 100%;
+    height:40%;
+    background-color: rgb(255, 255, 255);
+}
+#section3 .heading{
+    padding-top: 100px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading p{
+    color: rgb(161, 162, 162);
+    font-size: larger;
+    letter-spacing: 1px;
+}
+
+.heading h1{
+    font-size: 80px;
+    font-weight: 400;
+}
+
+#section4{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-bar{
+    width: 100%;
+    height: 80px;      
+    background-color: rgb(238, 236, 236);
+    display: flex;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    flex-wrap: wrap;      
+    gap: 10px;
+}
+.villa{
+    width: 200px;
+    height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    cursor: pointer;
+}
+.villa:hover{
+    background-color: black;
+    color: white;
+    transition: all .5s;
+}
+.card-holder{
+    margin-top: 30px;
+    height: 60%;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: rgb(247, 246, 246);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card-s{
+    height: 90%;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+}
+.card-s .ca-rd{
+    background-image: url(https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJlZHJvb20lMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D);
+    height: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: right;
+    padding: 12px;
+    background-position: center;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.card-s .star {
+    height: 40px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    gap: 3px;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+.card-s .content{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-s .content p{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(151, 151, 153);
+}
+.card-s .content h2{
+    font-weight: 300;
+}
+.card-s .explore{
+    padding: 30px;
+    font-weight: 400;
+    font-size: 20px;
+
+}
+
+.card-s .card-head{
+    padding: 30px;
+}
+.card-head h2{
+    font-size: 30px;
+    font-weight: 500;
+}
+.card-head span{
+    font-size: 16px;
+    color: rgb(117, 117, 119);
+}
+.card-s .sub-head{
+    padding: 35px;
+    border-top: 1px solid rgb(235, 235, 235);   
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.sub-head h3{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.info-row{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.info-row .label{
+    color: rgb(151, 151, 153);
+}
+.info-row .value{
+    font-weight: 500;
+    color: black;
+}
+
+.card-s .clean{
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.card-s .clean h2{
+    font-weight: 500;
+}
+.card-s .clean p{
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(142, 140, 140);
+}
+.book-now{
+    text-transform: uppercase;
+    font-weight: 900;
+    background-color: black;    
+    color: white;
+    border: none;
+    font-size: 25px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+.ca-rd-1{
+    background-image: url(https://media.istockphoto.com/id/1256466090/photo/modern-style-bedroom.webp?a=1&b=1&s=612x612&w=0&k=20&c=T6_ugDtrYQKEZS0W21yIpVXmawNdQDaDtpzcMTe87QU=);
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.ca-rd-1 .star-1{
+    height: 40px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    gap: 3px;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+.book-now:hover{
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: rgb(255, 254, 254);
+    color: rgb(0, 0, 0);
+    transition: all .5s;
+}
+
+footer{
+    width:100%;
+    background:#ffffff;
+    color:rgb(0, 0, 0);
+    margin-top:20%;
+}
+
+.footer-container{
+    max-width:1400px;
+    margin:auto;
+    padding:60px 40px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.footer-logo h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.footer-logo p{
+    color:#8787879d;
+    line-height:1.6;
+}
+
+.footer-links{
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-links h3,
+.footer-contact h3{
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.footer-links a{
+    color:#878787;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:rgb(49, 30, 255);
+}
+
+.footer-contact p{
+    color:#878787;
+    margin-bottom:12px;
+}
+
+.footer-contact i{
+    margin-right:8px;
+}
+
+.footer-bottom{
+    border-top:1px solid #000000;
+    text-align:center;
+    padding:20px;
+    color:#878787;
+}
+
+/* =========================================================
+   RESPONSIVE OVERRIDES
+   Your HTML is untouched — everything below only adjusts the
+   existing selectors above at different viewport widths.
+   Breakpoints cover: large desktop, laptop, tablet (landscape
+   and portrait), large phones, small phones, and short/landscape
+   phones — plus the new footer section.
+   Each rule is commented with what it fixes and why.
+   ========================================================= */
+
+/* ---- Large desktop / wide monitors (1440px+) ----
+   CHANGED: cap heading sizes and center content so text and
+   photos don't stretch awkwardly on ultra-wide screens. */
+@media (min-width: 1440px){
+    .left h1{
+        font-size: 90px; /* was fixed 80px, scale up a bit on very wide screens */
+    }
+    .heading h1{
+        font-size: 96px; /* was fixed 80px */
+    }
+    main{
+        max-width: 1600px; /* prevent content from stretching edge-to-edge */
+        margin: 0 auto;
+    }
+}
+
+/* ---- Laptop / small desktop (max-width: 1200px) ----
+   CHANGED: shrink the hero headline and give the accommodation
+   cards more room before they wrap. */
+@media (max-width: 1200px){
+    .left h1{
+        font-size: 60px; /* down from 80px so it doesn't crowd the paragraph */
+    }
+    .card-s{
+        width: 30%; /* down from 23% so 3 cards fit comfortably instead of 4 cramped ones */
+    }
+}
+
+/* ---- Tablets, landscape and large portrait (max-width: 1024px) ----
+   CHANGED: switch the hero and card sections from fixed
+   viewport-height layouts to natural stacked/auto-height
+   layouts, since fixed heights break on tablet aspect ratios.
+   Also scales the footer columns down slightly. */
+@media (max-width: 1024px){
+    main{
+        height: auto; /* was 100% (tied to viewport height) — now grows with content */
+        padding: 0 16px; /* reduced side padding for narrower screens */
+    }
+    #section1{
+        height: auto; /* was 100% */
+    }
+    .hero-div{
+        height: auto; /* was calc(100% - 51px) */
+        flex-direction: column; /* stack left/right instead of side-by-side */
+    }
+    .hero-div .left,
+    .hero-div .right{
+        width: 100%; /* was 50% each */
+        height: auto;
+    }
+    .hero-div .right img{
+        height: 320px; /* give the stacked image a sensible fixed height */
+    }
+    .left h1{
+        font-size: 48px;
+        padding-top: 24px;
+    }
+    .left p{
+        font-size: 17px;
+    }
+
+    #section2{
+        height: auto; /* was 60% of viewport */
+    }
+    .second-section{
+        height: auto; /* was 50% */
+        flex-wrap: wrap; /* let the 4 room cards wrap to 2x2 instead of squeezing */
+    }
+    .card1, .card2, .card3, .card4{
+        width: calc(50% - 10px); /* was 25% — now 2 per row */
+        height: 340px;
+    }
+
+    #section3{
+        height: auto; /* was 40% of viewport */
+        padding: 40px 0;
+    }
+    #section3 .heading{
+        padding-top: 0; /* was 100px, too much whitespace once height isn't viewport-locked */
+    }
+    .heading h1{
+        font-size: 56px;
+    }
+
+    #section4{
+        height: auto; /* was 100% */
+    }
+    .card-holder{
+        height: auto; /* was 60% of viewport */
+        flex-wrap: wrap; /* let the 4 accommodation cards wrap to 2x2 */
+        gap: 16px;
+        padding: 16px;
+    }
+    .card-s{
+        width: calc(50% - 8px); /* was 23% */
+        height: auto; /* was 90% of a fixed-height parent */
+        min-height: 260px;
+    }
+    .card-s .ca-rd,
+    .ca-rd-1{
+        min-height: 220px; /* was 100% of a fixed-height parent, needs its own floor now */
+    }
+
+    /* --- Footer (new section) --- */
+    footer{
+        margin-top: 60px; /* was 20% of page height, way too much once sections aren't viewport-locked */
+    }
+    .footer-container{
+        padding: 40px 24px; /* was 60px 40px, tightened for tablet */
+        gap: 32px;
+    }
+    .footer-logo h2{
+        font-size: 32px; /* was fixed 40px */
+    }
+}
+
+/* ---- Small tablets / large phones, portrait (max-width: 768px) ----
+   CHANGED: further tighten spacing and typography between the
+   1024px tablet layout and the 640px phone layout so nothing
+   feels oversized on devices like a portrait iPad Mini or a
+   large phone (e.g. iPhone Pro Max, Galaxy S-series). */
+@media (max-width: 768px){
+    nav{
+        border-radius: 16px;
+        padding: 12px 16px;
+    }
+    .header h1{
+        font-size: 20px; /* nav logo text scaled down */
+    }
+    .links a{
+        font-size: 17px;
+    }
+    .left h1{
+        font-size: 42px; /* between the 1024px (48px) and 640px (36px) steps */
+    }
+    .hero-div .right img{
+        height: 280px;
+    }
+    .heading h1{
+        font-size: 46px;
+    }
+    .villa{
+        font-size: 16px;
+        width: calc(50% - 5px);
+    }
+
+    /* --- Footer --- */
+    .footer-container{
+        text-align: center;
+        justify-content: center; /* center the 3 footer columns as they wrap */
+    }
+    .footer-links{
+        align-items: center; /* keep links centered under their heading */
+    }
+}
+
+/* ---- Mobile phones (max-width: 640px) ----
+   CHANGED: fully stack every multi-column layout into a single
+   column, enlarge tap targets, and scale text down for small
+   screens. Footer columns stack top to bottom. */
+@media (max-width: 640px){
+    main{
+        padding: 0 12px;
+    }
+    nav{
+        justify-content: center;
+        text-align: center;
+        border-radius: 16px;
+    }
+    nav .links{
+        order: 3; /* move nav links below the logo/buttons row on small screens */
+    }
+    .links a{
+        font-size: 16px;
+    }
+    .btn{
+        width: 100%;
+        justify-content: center;
+    }
+    .btn button{
+        flex: 1; /* Login/Contact buttons share full width equally */
+    }
+
+    .hero-div{
+        border-radius: 16px;
+    }
+    .hero-div .left{
+        padding: 20px;
+    }
+    .left h1{
+        font-size: 36px;
+    }
+    .left p{
+        font-size: 15px;
+    }
+    .left .btn{
+        flex-direction: column; /* stack Login/Get Started buttons */
+    }
+    .left .btn button{
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-div .right img{
+        height: 220px;
+    }
+    .left .logo{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 15px 0;
+    }
+    .left .logo img{
+        height: 40px; /* was fixed 60px, too large next to wrapped rows */
+    }
+
+    .second-section{
+        flex-direction: column; /* 1 room card per row */
+    }
+    .card1, .card2, .card3, .card4{
+        width: 100%;
+        height: 300px;
+    }
+
+    .heading h1{
+        font-size: 36px;
+    }
+    .heading p{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .nav-bar{
+        height: auto; /* was fixed 80px, wraps to 2 rows on phones */
+        padding: 10px;
+    }
+    .villa{
+        width: calc(50% - 5px); /* was fixed 200px, now 2 per row */
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .card-holder{
+        flex-direction: column; /* 1 accommodation card per row */
+    }
+    .card-s{
+        width: 100%;
+    }
+    .card-s .ca-rd,
+    .ca-rd-1{
+        min-height: 200px;
+    }
+    .book-now{
+        font-size: 18px; /* was fixed 25px, too large for narrow buttons */
+    }
+
+    /* --- Footer --- */
+    footer{
+        margin-top: 40px;
+    }
+    .footer-container{
+        flex-direction: column; /* was row with wrap — now a single stacked column */
+        align-items: center;
+        padding: 32px 20px;
+        gap: 28px;
+    }
+    .footer-logo h2{
+        font-size: 28px;
+    }
+    .footer-links,
+    .footer-contact{
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* ---- Small phones (max-width: 400px) ----
+   CHANGED: iPhone SE / small Android widths — tighten
+   typography and spacing further, and drop the villa filter
+   buttons to one per row since 2-up gets too cramped. */
+@media (max-width: 400px){
+    .left h1{
+        font-size: 30px;
+    }
+    .left p{
+        font-size: 14px;
+    }
+    .heading h1{
+        font-size: 30px;
+    }
+    .card-img1-text h4{
+        font-size: 15px;
+    }
+    .card-img3-text h2{
+        font-size: 19px; /* was fixed 25px */
+    }
+    .villa{
+        width: 100%; /* was calc(50% - 5px), stack to 1 per row */
+    }
+    .card-head h2{
+        font-size: 24px; /* was fixed 30px */
+    }
+    .sub-head{
+        padding: 24px !important; /* was fixed 35px, too tight on small screens otherwise */
+    }
+
+    /* --- Footer --- */
+    .footer-logo h2{
+        font-size: 24px; /* was fixed 40px in base rule */
+    }
+    .footer-links h3,
+    .footer-contact h3{
+        font-size: 20px; /* was fixed 24px */
+    }
+}
+
+/* ---- Short / landscape phones (max-height: 480px and landscape) ----
+   CHANGED: when height is limited (phone rotated sideways),
+   shrink the hero image so the whole hero doesn't push content
+   far below the fold. */
+@media (max-height: 480px) and (orientation: landscape){
+    .hero-div{
+        flex-direction: row; /* keep side-by-side, there's enough width in landscape */
+    }
+    .hero-div .left,
+    .hero-div .right{
+        width: 50%;
+        height: auto;
+    }
+    .hero-div .right img{
+        height: 240px;
+    }
+    .left h1{
+        font-size: 32px;
+        padding-top: 10px;
+    }
+    .left p{
+        padding-top: 10px;
+        font-size: 14px;
+    }
+    .left .btn{
+        padding-top: 12px;
+    }
+}
