@@ -96,7 +96,7 @@ The website is optimized for:
 
 **Ayush Gowda**
 
-GitHub: https://github.com/im-ayushgowda
+GitHub: https://github.com/im-ayushgowda/COHORT-03
 
 ---
 
