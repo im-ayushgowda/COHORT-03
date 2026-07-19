@@ -12,7 +12,7 @@ A modern and responsive **E-Commerce Landing Page** built using
 
 ## 🚀 Features
 
--   Fully Responsive Design
+-   Fully Responsive Design - Done using AI Agents
 -   Modern UI
 -   Search Bar
 -   Hero Banner
