@@ -13,7 +13,7 @@ A modern and responsive hotel booking landing page built using **HTML5** and **C
 ## ✨ Features
 
 - ✅ Modern hotel landing page
-- ✅ Fully responsive design
+- ✅ Fully responsive design - Done using AI Agents
 - ✅ Interactive navigation bar
 - ✅ Hero section with call-to-action buttons
 - ✅ Featured room cards
