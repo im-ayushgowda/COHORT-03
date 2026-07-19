@@ -5,7 +5,7 @@ A modern and responsive **E-Commerce Landing Page** built using
 
 ## 🚀 Live Demo
 
-🔗 https://im-ayushgowda.github.io/COHORT-03/ASSIGNMENT%20-%2001/
+🔗 https://im-ayushgowda.github.io/COHORT-03/ASSIGNMENT%20-%2002/
 
 ---
 
