@@ -6,7 +6,7 @@ A modern and responsive landing page built using **HTML5** and **CSS3**. The pro
 
 Add your GitHub Pages link here:
 
-https://your-username.github.io/your-repository/
+https://im-ayushgowda.github.io/COHORT-03/ASSIGNMENT%20-%2003/
 
 ---
 
@@ -81,7 +81,7 @@ images/screenshot.png
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/im-ayushgowda/COHORT-03
 ```
 
 2. Open the project folder
@@ -108,9 +108,7 @@ cd your-repository
 
 **Ayush Gowda**
 
-GitHub: https://github.com/your-username
-
-LinkedIn: https://linkedin.com/in/your-profile
+GitHub:  https://github.com/im-ayushgowda
 
 ---
 
