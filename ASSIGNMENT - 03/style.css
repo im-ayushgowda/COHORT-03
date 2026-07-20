@@ -1,0 +1,399 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url('fonts/Lexend-Regular.woff2') format('woff2'),
+         url('fonts/Lexend-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Lexend', sans-serif;
+    background: #e9e9e9;
+    display: flex;              /* FIXED: centers the card on the page */
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====================================================
+   FIXED — NEW WRAPPER
+   Everything below scales off THIS element's width via
+   CSS container queries (cqw), not the browser viewport.
+   That's the actual fix for "position breaks on zoom":
+   every number in this file is now a % of the card
+   itself, so the whole card scales as one unit no matter
+   the browser zoom level, window size, or where it's
+   embedded.
+   ===================================================== */
+.canvas{
+    width: 100%;
+    max-width: 1400px;
+    aspect-ratio: 16 / 8.2;       /* FIXED: locks card proportions permanently */
+    padding: clamp(8px, 1.2cqw, 20px);
+    container-type: inline-size;  /* FIXED: makes cqw units below possible */
+    container-name: card;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-radius: 1.5cqw;        /* CHANGED from 20px (fixed) */
+    display: grid;
+    padding: 1.5cqw;              /* CHANGED from 15px (fixed) */
+    gap: 1cqw;                    /* CHANGED from 10px (fixed) */
+    overflow: hidden;
+    grid-template-columns: 28% 28% 42.8%;
+    grid-template-rows: 38% 28% 9% 20%;
+    grid-template-areas:
+        "left-top left-top right-top"
+        "left-center1 center right"
+        "left-center1 bottom-center right"
+        "bottom-left bottom-center right";
+}
+
+.left-top{ background-color: #F4EEE5; grid-area: left-top; border-radius: 1.5cqw; }
+.right-top{ background-color: #004d41; grid-area: right-top; border-radius: 1.5cqw; }
+.left-center1{ background-color: #d60000; grid-area: left-center1; border-radius: 1.5cqw; }
+.center{ background-color: #F4EEE5; grid-area: center; border-radius: 1.5cqw; }
+.right{ background-color: #F4EEE5; grid-area: right; border-radius: 1.5cqw; }
+.bottom-left{ background-color: #F4EEE5; grid-area: bottom-left; border-radius: 1.5cqw; }
+.bottom-center{ background-color: #004d41; grid-area: bottom-center; border-radius: 1.5cqw; }
+
+/* ========================= */
+/* LEFT TOP */
+/* ========================= */
+
+.left-top{
+    padding: 2.5cqw;              /* CHANGED from 35px (fixed) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1cqw;                    /* FIXED: added so text/image never touch */
+    overflow: hidden;             /* FIXED: prevents image spilling out on zoom */
+}
+
+.left-top-text h1{
+    font-size: clamp(1.1rem, 4.2cqw, 3.2rem); /* CHANGED from 4.2vw (viewport-based) */
+    line-height: .95;
+    color: #005344;
+    font-weight: 700;
+}
+
+/* FIXED: original had no rules for .left-top-image, only an
+   unused .left-top-img class, so the image had no sizing
+   control at all. Added a real container + object-fit. */
+.left-top-image{
+    flex: 0 0 42%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left-top-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;          /* FIXED: keeps aspect ratio, no fixed px */
+}
+
+/* ========================= */
+/* RIGHT TOP */
+/* ========================= */
+
+.right-top{
+    padding: 2.2cqw;              /* CHANGED from 30px (fixed) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: clamp(.75rem, 1.5cqw, 1.15rem); /* CHANGED from fixed 20px */
+    position: relative;
+    z-index: 2;
+}
+.right-top-header i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.2cqw;               /* CHANGED from fixed 30px */
+    width: 2.2cqw;
+    min-height: 22px;             /* FIXED: floor so it never disappears on small cards */
+    min-width: 22px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-size: clamp(.7rem, 1.3cqw, 1rem);
+}
+.right-top-header i:hover{
+    background-color: black;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.hand{
+    position: absolute;
+    right: 0;                     /* FIXED: was "right: 8" — invalid, missing a unit */
+    bottom: 0;                    /* FIXED: added so it anchors instead of floating mid-box */
+    height: 85%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+}
+.hand img{
+    width: 100%;                  /* CHANGED from fixed 190% height (caused overflow/crop) */
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom right;
+}
+
+/* ========================= */
+/* LEFT CENTER */
+/* ========================= */
+
+.left-center1{
+    padding: 1.4cqw;              /* CHANGED from 25px (fixed) */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    color: crimson;
+}
+
+.left-container{
+    padding: .6cqw;               /* CHANGED from 6px (fixed) */
+    height: 100%;
+    width: 100%;
+    gap: 1.4cqw;                  /* CHANGED from 20px (fixed) */
+    border-radius: 2cqw;          /* CHANGED from 30px (fixed) */
+    background-color: #F4EEE5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;      /* FIXED: "first baseline" was not a valid align-items value */
+    justify-content: space-between; /* FIXED: added so content spreads evenly on any height */
+}
+
+.date{
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* FIXED: was "gap: 180px" — a fixed px gap that
+                                        overflowed the box at smaller card sizes */
+    font-size: clamp(.6rem, 1.1cqw, .95rem); /* CHANGED from fixed 15px */
+    font-weight: 600;
+    color: #d60000;
+}
+
+.team h2{
+    font-size: clamp(1rem, 3.5cqw, 2.6rem); /* CHANGED from 3.5vw (viewport-based) */
+    line-height: .95;
+    font-style: italic;
+    font-weight: 500;
+    color: #d60000;               /* FIXED: original relied on unreliable inherited crimson */
+}
+
+.meeting h4{
+    font-size: clamp(.7rem, 1.4cqw, 1.15rem); /* CHANGED from fixed 18px, moved off .meeting p */
+    font-weight: 300;
+    color: #d60000;
+}
+
+/* ========================= */
+/* CENTER */
+/* ========================= */
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8cqw;                   /* CHANGED from 10px (fixed) */
+}
+
+.logo-circle{
+    display: flex;
+    align-items: center;          /* FIXED: added centering, original just set size */
+    justify-content: center;
+    width: clamp(40px, 7cqw, 90px);   /* CHANGED from fixed 90px */
+    height: clamp(40px, 7cqw, 90px);
+    background: #d60000;
+    border-radius: 50%;
+    overflow: hidden;             /* FIXED: keeps logo image clipped to circle */
+}
+.logo-circle img{
+    width: 70%;                   /* FIXED: logo img had no sizing rules at all before */
+    height: 70%;
+    object-fit: contain;
+}
+
+.logo h1{
+    font-size: clamp(1.3rem, 4.3cqw, 3.4rem); /* CHANGED from fixed 55px */
+    color: #d60000;
+}
+
+/* ========================= */
+/* RIGHT */
+/* ========================= */
+
+.right{
+    overflow: hidden;
+    position: relative;
+    display: flex;                /* FIXED: added so content/people stack predictably */
+    flex-direction: column;
+}
+
+.right-content{
+    padding-top: 2.5cqw;          /* FIXED: added breathing room from top edge */
+    position: relative;
+    z-index: 2;                   /* FIXED: keeps text above the people image */
+}
+.right-content h1,
+.right-content h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d60000;
+    font-size: clamp(1rem, 3.6cqw, 2.7rem); /* CHANGED from 3.6vw (viewport-based) */
+    line-height: .95;
+    text-align: center;
+}
+
+.right-content p{
+    margin-top: 1cqw;             /* CHANGED from fixed 20px */
+    text-align: center;
+    font-size: clamp(.65rem, 1.2cqw, 1rem); /* FIXED: had no font-size before */
+    color: #d60000;               /* FIXED: had no color before */
+}
+
+.people{
+    position: absolute;
+    left: 0;                      /* CHANGED from fixed left:70px */
+    right: 0;
+    bottom: 0;                    /* CHANGED from fixed bottom:-20px */
+    height: 55%;                  /* FIXED: was fixed 400px tall — didn't scale at all */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1;
+}
+.people img{
+    height: 100%;                 /* CHANGED from fixed 400px */
+    width: auto;                  /* CHANGED from fixed 500px */
+    max-width: 90%;
+    object-fit: contain;
+}
+
+/* ========================= */
+/* BOTTOM LEFT */
+/* ========================= */
+
+.bottom-left{
+    padding: 1.4cqw;              /* CHANGED from fixed 20px */
+    display: flex;
+    align-items: center;
+    overflow: hidden;             /* FIXED: prevents long chat bubbles breaking the grid */
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    gap: 1cqw;                    /* CHANGED from fixed 15px */
+    width: 100%;
+}
+
+.msg{
+    padding: .8cqw 1.6cqw;        /* CHANGED from fixed 12px/20px */
+    border-radius: 3cqw;          /* CHANGED from fixed 40px */
+    width: max-content;
+    max-width: 100%;              /* FIXED: stops bubble overflowing its box */
+    font-size: clamp(.65rem, 1.3cqw, 1.05rem); /* CHANGED from fixed 18px */
+}
+
+.white{ background: white; }
+.green{ background: #27ae60; color: white; }
+
+/* ========================= */
+/* BOTTOM CENTER */
+/* ========================= */
+
+.bottom-center{
+    padding: 1.2cqw;              /* CHANGED from fixed 20px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4cqw;                  /* CHANGED from fixed 25px */
+}
+
+.bottom-center button{
+    border: none;
+    font-weight: 600;
+    padding: .8cqw 2cqw;          /* CHANGED from fixed 12px/30px */
+    border-radius: 3cqw;          /* CHANGED from fixed 50px */
+    background: black;
+    color: white;
+    font-size: clamp(.65rem, 1.2cqw, 1.05rem); /* CHANGED from fixed 18px */
+    cursor: pointer;
+    white-space: nowrap;          /* FIXED: stops button text wrapping on narrow cards */
+}
+
+.users{
+    display: flex;
+    gap: .9cqw;                   /* CHANGED from fixed 15px */
+}
+
+.user{
+    width: clamp(28px, 3.5cqw, 55px);   /* CHANGED from fixed 55px */
+    height: clamp(28px, 3.5cqw, 55px);
+    background: #F4EEE5;
+    border-radius: 50%;
+    display: flex;                /* FIXED: original centering was on .user i only,
+                                      not the circle itself */
+    align-items: center;
+    justify-content: center;
+}
+.user i{
+    font-size: clamp(.9rem, 2.4cqw, 1.7rem); /* CHANGED from fixed 40px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====================================================
+   FIXED — NEW: small-card fallback.
+   Original had no breakpoints at all, so very small
+   containers just crushed the grid. This reflows to a
+   simple 2-column stack instead.
+   ===================================================== */
+@media (max-width: 480px){
+    .canvas{ aspect-ratio: auto; }
+    main{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            "left-top left-top"
+            "right-top right-top"
+            "left-center1 center"
+            "right right"
+            "bottom-left bottom-center";
+    }
+}
